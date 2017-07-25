@@ -9,7 +9,7 @@ describe("park", function(){
     park = new Park();
   });
 
-  it("can have dinosaurs added to it", function() {
+  it("can add dinosaurs to enclosure", function() {
     dinos = [];
     dinos[0] = new Dinosaur("Tyrannosaurus", 2);
     dinos[1] = new Dinosaur("Velociraptor", 1);
