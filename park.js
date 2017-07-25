@@ -16,4 +16,14 @@ Park.prototype.remove = function(type){
   }
 }
 
+Park.prototype.getWithOffspingCountTwoAndOver = function(){
+  var result = [];
+  for(var dino of this.enclosure){
+    if(dino.offspringPerYear >= 2){
+      result.push(dino);
+    }
+  }
+  return result;
+}
+
 module.exports = Park;
