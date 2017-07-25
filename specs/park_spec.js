@@ -10,7 +10,7 @@ describe("park", function(){
     park = new Park();
     dinos = [];
     dinos[0] = new Dinosaur("Tyrannosaurus", 2);
-    dinos[1] = new Dinosaur("Tyrannosaurus", 2);
+    dinos[1] = new Dinosaur("Tyrannosaurus", 3);
     dinos[2] = new Dinosaur("Velociraptor", 1);
   });
 
@@ -31,6 +31,25 @@ describe("park", function(){
 
     park.remove("Tyrannosaurus");
     assert.strictEqual(park.enclosure[0], dino[2]);
+  });
+
+  it("can get dinosaurs with offspringPerYear >= 2", function() {
+    dinos.push(new Dinosaur("Velociraptor", 5));
+
+    for(var dino of dinos){
+      park.add(dino);
+    }
+
+    var expected = [];
+    expected.push(dinos[0]);
+    expected.push(dinos[1]);
+    expected.push(dinos[3]);
+
+    var result = park.getWithOffspingCountTwoAndOver();
+
+    for(var index in expected){
+      assert.strictEqual(result[index], expected[index]);
+    }
   });
 
 });
