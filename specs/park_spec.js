@@ -21,4 +21,18 @@ describe("park", function(){
     }
   });
 
+  it("can remove dinosaurs of given type", function() {
+    dinos = [];
+    dinos[0] = new Dinosaur("Tyrannosaurus", 2);
+    dinos[1] = new Dinosaur("Tyrannosaurus", 2);
+    dinos[2] = new Dinosaur("Velociraptor", 1);
+
+    for(var dino of dinos){
+      park.add(dino);
+    }
+
+    park.remove("Tyrannosaurus");
+    assert.strictEqual(park.enclosure[0], dino[2]);
+  });
+
 });
