@@ -30,7 +30,7 @@ describe("park", function(){
     }
 
     park.remove("Tyrannosaurus");
-    assert.strictEqual(park.enclosure[0], dino[2]);
+    assert.strictEqual(park.enclosure[0], dinos[2]);
   });
 
   it("can get dinosaurs with offspringPerYear >= 2", function() {
